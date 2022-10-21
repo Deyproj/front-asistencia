@@ -2,25 +2,27 @@ import logo from './logo.svg';
 import './App.css';
 import { Container, Row, Col } from 'reactstrap';
 import ListaPersonas from './ListaPersonas';
+import NavBar from './NavBar';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function App() {
   const [personas, setPersonas] = useState([]);
 
-  const CargarPersonas = () => {
+  const cargarPersonas = () => {
     axios.get('http://localhost:9090/personas')
-      .then((data) => setPersonas(data));
+      .then(({data}) => setPersonas(data));
   }
 
-  useEffect(CargarPersonas, []);
+  useEffect(cargarPersonas, []);
 
   return (
     <>
+    <NavBar/> 
     <Container>
       <Row>
         <Col>
-          <ListaPersonas personas={personas} />       
+          <ListaPersonas personas={personas} />     
         </Col>
       </Row>
     </Container>
