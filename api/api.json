@@ -1,0 +1,32 @@
+[
+{
+"idPersona": 4,
+"idEmpresa": "132890",
+"nombre": "ACEVEDO GOMEZ KAREN ELVIRA",
+"cedula": "1044911761",
+"celular": "3154102733",
+"proceso": "BOUQUET MANUFACTURA [SEDE 8 - 08]",
+"estado": null,
+"observaciones": null
+},
+{
+"idPersona": 14,
+"idEmpresa": "18648",
+"nombre": "ACEVEDO LOPEZ JOHNATAN",
+"cedula": "1040036629",
+"celular": "3005579639",
+"proceso": "BOUQUET RECEPCION DE FLOR (SEDE 8)",
+"estado": null,
+"observaciones": null
+},
+{
+"idPersona": 24,
+"idEmpresa": "116743",
+"nombre": "ACEVEDO SOLIS SANDRA MILENA",
+"cedula": "43159267",
+"celular": "3226046573",
+"proceso": "BOUQUET SOPORTE OPERATIVO [SEDE 8 - 30]",
+"estado": null,
+"observaciones": null
+},
+]
