@@ -10,17 +10,17 @@ import { useEffect, useState } from 'react';
 import Header from './components/Header';
 
 function App() {
+  const [personas, setPersonas,] = useState([]);
+  let totalPersonas = personas.length;
+
+  const cargarPersonas = () => {
+    axios.get('http://localhost:9090/personas')
+      .then(({data}) => setPersonas(data))
+  }
+
+  useEffect(cargarPersonas, []);
+
   /*
-    const [personas, setPersonas,] = useState([]);
-    let totalPersonas = personas.length;
-  
-    const cargarPersonas = () => {
-      axios.get('http://localhost:9090/personas')
-        .then(({data}) => setPersonas(data))
-    }
-  
-    useEffect(cargarPersonas, []);
-  */
   const personas =
     [
       {
@@ -84,11 +84,18 @@ function App() {
         "observaciones": null
       },
     ];
-  let totalPersonas = personas.length;
+    let totalPersonas = personas.length;
+    */  
   let procesos = new Set([]);
   {personas.map((persona) => (
     procesos.add(persona.proceso)
     ))}
+
+    const actulizarObservaciones = (persona)  => {
+      console.log(`${persona.idPersona}`)
+      axios.put(`http://localhost:9090/personas/${persona.idPersona}`)
+        .then(console.log("Acualizado"))
+    }
 
 
   return (
@@ -98,7 +105,7 @@ function App() {
       <Container>
         <Row>
           <Col md={8}>
-            <ListaPersonas personas={personas}/>
+            <ListaPersonas personas={personas} onUpdate={actulizarObservaciones}/>
           </Col>
           <Col md={4}>
             <TarjetasPersonas totalPersonas={totalPersonas} />

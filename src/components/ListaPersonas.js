@@ -1,11 +1,10 @@
 import React from "react";
-import { Accordion, Form, ListGroup } from "react-bootstrap";
-import { useState } from 'react';
+import { Accordion, Form } from "react-bootstrap";
 
 
 
 
-const ListaPersonas = ({ personas }) => {
+const ListaPersonas = ({ personas, onUpdate}) => {
   const procesosTodos = [];
   personas.forEach(persona => {
     procesosTodos.push(persona.proceso)
@@ -31,13 +30,14 @@ const ListaPersonas = ({ personas }) => {
                     className="btn  pt-0 pb-0  rounded-circle" target="blank">
                     <img src="/images/whatsapp.png" width="21" />
                   </a> <br /><br />
-                  <Form.Control placeholder="Observaciones" />
+                  <Form.Control  name="observaciones" placeholder="Observaciones" onBlur={() => onUpdate(persona)}/>
                 </Accordion.Body>
                 <div className="mb-2 mx-2">
                   <Form.Check
                     className="mx-4"
                     type="switch"
                     id={`${persona.idpersona}`}
+                    //onBlur={enviarObservaciones}
                     />
                     <text className="mx-2">Presente</text>
                     </div>
