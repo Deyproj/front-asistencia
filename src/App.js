@@ -12,6 +12,8 @@ import Header from './components/Header';
 function App() {
   const [personas, setPersonas,] = useState([]);
   let totalPersonas = personas.length;
+  const [persona, setPersona,] = useState();
+
 
   const cargarPersonas = () => {
     axios.get('http://localhost:9090/personas')
@@ -91,10 +93,14 @@ function App() {
     procesos.add(persona.proceso)
     ))}
 
-    const actulizarObservaciones = (persona)  => {
-      console.log(`${persona.idPersona}`)
-      axios.put(`http://localhost:9090/personas/${persona.idPersona}`)
-        .then(console.log("Acualizado"))
+    const actulizarObservaciones = (observaciones)  => {
+      if (persona) {
+        persona.observaciones = observaciones.undefined;
+        console.log(`${persona.observaciones}`)
+        axios.get(`http://localhost:9090/personas/${persona.idPersona}`, observaciones.undefined)
+        .then(setPersona())
+      }else{console.log("Nooooooooooo")}
+
     }
 
 

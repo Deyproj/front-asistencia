@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Form } from "react-bootstrap";
 
 
 
 
-const ListaPersonas = ({ personas, onUpdate}) => {
+const ListaPersonas = ({ personas, onUpdate }) => {
   const procesosTodos = [];
   personas.forEach(persona => {
     procesosTodos.push(persona.proceso)
   });
   const procesos = [... new Set(procesosTodos)];
 
+  const [observaciones, setObservaciones] = useState()
+  
+  const onObserv = (event) => {
+    console.log(event.target.value)
+    setObservaciones({
+      ...observaciones,
+      [event.target.observaciones] : event.target.value,
+    })
+  }
+
   return (
     <>
       <div className="mt-3">
-        <Accordion>
+        <Accordion> 
           {personas.map((persona) => (
             <>
               <Accordion.Item key={persona.idPersona} className="mb-2 shadow-lg rounded" eventKey={persona.idPersona}>
-                <Accordion.Header >{persona.nombre}</Accordion.Header>
+                <Accordion.Header>{persona.nombre}</Accordion.Header>
                 <Accordion.Body className="bodyCard">
                   <b>Id:</b><br />
                   {persona.idEmpresa}<br />
@@ -30,7 +40,9 @@ const ListaPersonas = ({ personas, onUpdate}) => {
                     className="btn  pt-0 pb-0  rounded-circle" target="blank">
                     <img src="/images/whatsapp.png" width="21" />
                   </a> <br /><br />
-                  <Form.Control  name="observaciones" placeholder="Observaciones" onBlur={() => onUpdate(persona)}/>
+                  <Form>
+                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={onObserv} onBlur={() => onUpdate(persona, observaciones)}/>
+                  </Form>
                 </Accordion.Body>
                 <div className="mb-2 mx-2">
                   <Form.Check
