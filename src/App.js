@@ -94,11 +94,12 @@ function App() {
     ))}
 
     const actulizarObservaciones = (observaciones)  => {
+      console.log(`${persona.observaciones}`)
       if (persona) {
         persona.observaciones = observaciones.undefined;
         console.log(`${persona.observaciones}`)
-        axios.get(`http://localhost:9090/personas/${persona.idPersona}`, observaciones.undefined)
-        .then(setPersona())
+        axios.get(`http://localhost:9090/personas/${persona.idPersona}`, persona)
+        .then(setPersona(), console.log("Siiiiii"))
       }else{console.log("Nooooooooooo")}
 
     }
@@ -111,7 +112,7 @@ function App() {
       <Container>
         <Row>
           <Col md={8}>
-            <ListaPersonas personas={personas} onUpdate={actulizarObservaciones}/>
+            <ListaPersonas personas={personas} onUpdate={actulizarObservaciones} persona={persona}/>
           </Col>
           <Col md={4}>
             <TarjetasPersonas totalPersonas={totalPersonas} />

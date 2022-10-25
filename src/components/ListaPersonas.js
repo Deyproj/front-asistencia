@@ -41,7 +41,7 @@ const ListaPersonas = ({ personas, onUpdate }) => {
                     <img src="/images/whatsapp.png" width="21" />
                   </a> <br /><br />
                   <Form>
-                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={onObserv} onBlur={() => onUpdate(persona, observaciones)}/>
+                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={onObserv} onBlur={() => onUpdate(observaciones, persona)}/>
                   </Form>
                 </Accordion.Body>
                 <div className="mb-2 mx-2">
@@ -64,7 +64,7 @@ const ListaPersonas = ({ personas, onUpdate }) => {
               name="palabraClave"
               className="form-control"
             >
-              <option disabled="disabled" selected={true}>
+              <option disabled="disabled" value={true}>
                 Selecciona tu equipo...
               </option>
               {procesos.map((proceso) => (
