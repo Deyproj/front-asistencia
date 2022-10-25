@@ -14,7 +14,6 @@ const ListaPersonas = ({ personas, onUpdate }) => {
   const [observaciones, setObservaciones] = useState()
   
   const onObserv = (event) => {
-    console.log(event.target.value)
     setObservaciones({
       ...observaciones,
       [event.target.observaciones] : event.target.value,
@@ -41,7 +40,7 @@ const ListaPersonas = ({ personas, onUpdate }) => {
                     <img src="/images/whatsapp.png" width="21" />
                   </a> <br /><br />
                   <Form>
-                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={onObserv} onBlur={() => onUpdate(observaciones, persona)}/>
+                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={onObserv} onBlur={() => onUpdate(persona, observaciones)}/>
                   </Form>
                 </Accordion.Body>
                 <div className="mb-2 mx-2">
