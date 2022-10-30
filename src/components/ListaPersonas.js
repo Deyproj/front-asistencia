@@ -4,7 +4,11 @@ import { Accordion, Form } from "react-bootstrap";
 
 
 
+
 const ListaPersonas = ({ personas, onUpdate }) => {
+  
+
+
   const procesosTodos = [];
   personas.forEach(persona => {
     procesosTodos.push(persona.proceso)
