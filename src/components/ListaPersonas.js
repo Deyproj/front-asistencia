@@ -29,7 +29,6 @@ const ListaPersonas = ({ personas, onUpdate }) => {
       <div className="mt-3">
         <Accordion> 
           {personas.map((persona) => (
-            <>
               <Accordion.Item key={persona.idPersona} className="mb-2 shadow-lg rounded" eventKey={persona.idPersona}>
                 <Accordion.Header>{persona.nombre}</Accordion.Header>
                 <Accordion.Body className="bodyCard">
@@ -57,7 +56,6 @@ const ListaPersonas = ({ personas, onUpdate }) => {
                     <text className="mx-2">Presente</text>
                     </div>
               </Accordion.Item>
-            </>
           ))}
         </Accordion>
         <form method="post" className="mb-3">
