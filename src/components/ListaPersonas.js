@@ -2,28 +2,23 @@ import React, { useState } from "react";
 import { Accordion, Form } from "react-bootstrap";
 
 
-
-
-
 const ListaPersonas = ({ personas, onUpdate }) => {
-  
 
-
-  const procesosTodos = [];
+    const procesosTodos = [];
   personas.forEach(persona => {
     procesosTodos.push(persona.proceso)
   });
   const procesos = [... new Set(procesosTodos)];
 
   const [observaciones, setObservaciones] = useState()
-  
+  /*
   const onObserv = (event) => {
     setObservaciones({
       ...observaciones,
       [event.target.observaciones] : event.target.value,
     })
   }
-
+*/
   return (
     <>
       <div className="mt-3">
@@ -43,7 +38,7 @@ const ListaPersonas = ({ personas, onUpdate }) => {
                     <img src="/images/whatsapp.png" width="21" />
                   </a> <br /><br />
                   <Form>
-                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={onObserv} onBlur={() => onUpdate(persona, observaciones)}/>
+                  <Form.Control  name="observaciones" placeholder="Observaciones" onChange={e => setObservaciones(e.target.value)} onBlur={() => onUpdate(persona, observaciones)}/>
                   </Form>
                 </Accordion.Body>
                 <div className="mb-2 mx-2">

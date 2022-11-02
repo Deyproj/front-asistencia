@@ -1,9 +1,6 @@
 import React from "react";
-import { ButtonGroup, ToggleButton, Form, Stack } from "react-bootstrap";
-import { useState } from 'react';
 
-
-const BotonesLista = ({ persona }) => {
+const BotonesLista = () => {
     return (
         <>
             <div className="d-flex flex-row mb-3">

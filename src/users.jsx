@@ -14,34 +14,19 @@ const Users = () => {
             "idUsuario": uuid4(),
             "username": "admin",
             "password": "$2a$10$1PV24Lq.KZzbK1deqYGz9ORh.7w0Lfm51vjiKtQ2FYsuEORDD4Ll6",
-            "roles": [
-                {
-                    "idRol": 4,
-                    "nombre": "ROLE_ADMIN"
-                }
-            ]
+            "role": "ADMIN"
         },
         {
             "idUsuario": uuid4(),
             "username": "user",
             "password": "$2a$10$cumVw47rOsyXgz8QlQVG4OHClaw9mye6sGpFolVKFq/vwBwndHY2K",
-            "roles": [
-                {
-                    "idRol": 14,
-                    "nombre": "ROLE_USER"
-                }
-            ]
+            "role": "USER"
         },
         {
             "idUsuario": uuid4(),
             "username": "dguzmanl",
             "password": "$2a$10$jpPXLdW/s5K3y23O4Ctii.miBzoQkiSPFGNV8uedkw4uDYVTpqCEm",
-            "roles": [
-                {
-                    "idRol": 64,
-                    "nombre": "ROLE_ADMIN"
-                }
-            ]
+            "role": "ADMIN"
         }
     ]
     const [users, setUsers] = useState(usersData);

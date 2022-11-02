@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 
 const UserTable = (props) => {
 
@@ -19,7 +18,7 @@ const UserTable = (props) => {
                     props.users.map((user) => (
                         <tr key={user.idUsuario}>
                             <td>{user.username}</td>
-                            <td>{user.roles.nombre}</td>
+                            <td>{user.role}</td>
                             <td>{user.password}</td>
                             <td>
                                 <button className='button muted-button'

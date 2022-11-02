@@ -7,25 +7,18 @@ const AddUserForm = (props) => {
 
     const onSubmit = (data, e) => {
         console.log(data)
-        //props.addUser(data);
-       // e.target.reset();
+        props.addUser(data);
+        e.target.reset();
     }
 
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)} />
-            <label>Nombre</label>
-            <input type="text" name="nombre" {...register("Campo Obligatorio", {
+            <label>UserName</label>
+            <input type="text" name="username" {...register("Campo Obligatorio", {
                 required: "Required",
             })}
             />
-            <div>
-                {errors?.nombre?.message}
-            </div>
-            <label>Username</label>
-            <input type="text" name="username" {...register("Campo Obligatorio", {
-                required: "Required",
-            })} />
             <div>
                 {errors?.username?.message}
             </div>
@@ -36,6 +29,13 @@ const AddUserForm = (props) => {
             />
             <div>
                 {errors?.password?.message}
+            </div>
+            <label>Rol</label>
+            <input type="text" name="rol" {...register("Campo Obligatorio", {
+                required: "Required",
+            })} />
+            <div>
+                {errors?.rol?.message}
             </div>
             <button>Agregar nuevo usuario</button>
         </>
