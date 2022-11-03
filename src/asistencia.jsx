@@ -3,6 +3,8 @@ import ListaPersonas from "./components/ListaPersonas";
 import TarjetasPersonas from "./components/TarjetasPersonas";
 import axios from "axios";
 import Header from "./components/layout/Header";
+import { faUsers, faPersonCircleMinus } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const Asistencia = () => {
@@ -118,6 +120,7 @@ const Asistencia = () => {
                     totalPersonas={totalPersonas}
                     titulo="Total Personas"
                     background="bg-primary"
+                    icon={faUsers}
                   />
                 </Col>
               </Row>
