@@ -3,7 +3,7 @@ import ListaPersonas from "./components/ListaPersonas";
 import TarjetasPersonas from "./components/TarjetasPersonas";
 import axios from "axios";
 import Header from "./components/layout/Header";
-import { faUsers, faPersonCircleMinus } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -76,18 +76,16 @@ const Asistencia = () => {
     
       /*
       useEffect(cargarPersonas, []);
-      let procesos = new Set([]);
-      {personas.map((persona) => (
-        procesos.add(persona.proceso)
-        ))}
       const cargarPersonas = () => {
         axios.get('http://localhost:9090/personas')
           .then(({data}) => setPersonas(data))
       }
+      let procesos = new Set([]);
+      {personas.map((persona) => (
+        procesos.add(persona.proceso)
+        ))}
     */
       const actulizarObservaciones = (persona, observaciones) => {
-        console.log(persona);
-        console.log(observaciones);
         if (persona) {
           persona.observaciones = observaciones.undefined;
           axios
@@ -98,12 +96,12 @@ const Asistencia = () => {
         }
       };
     /*
-      const addUser = (user) => {
-        axios
-          .post(`http://localhost:9090/personas`, user)
-          .then(console.log("Siiiiii"));
+      const addUser = async (user) => {
+       const data = await fetch(`http://localhost:9090/personas`, user)
+        const users = await data.json()
+        console.log(users)
       };
-    */
+   */
       return (
         <>
             <Header titulo="Asistencia" />
