@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="navBar" variant="dark">
+    <Navbar collapseOnSelect expand="lg" className="navBar " variant="dark">
       <Container>
         <Navbar.Brand>Flores Isabelita</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

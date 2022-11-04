@@ -1,4 +1,4 @@
-export const personas = [
+[
     {
     "idPersona": 4,
     "idEmpresa": "132890",

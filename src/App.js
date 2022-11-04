@@ -2,7 +2,7 @@ import NavBar from "./components/layout/NavBar";
 import Asistencia from "./asistencia";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Actual from "./actual";
+import Actual from "./views/actual";
 import Users from "./users";
 import Footer from "./components/layout/Footer";
 import { Row } from "reactstrap";

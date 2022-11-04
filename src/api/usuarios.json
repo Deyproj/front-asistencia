@@ -1,4 +1,4 @@
-export const personas = [
+[
     {
         "idUsuario": 1,
         "username": "admin",
