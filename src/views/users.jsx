@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-import AddUserForm from './components/AddUserForm';
-import EditUserForm from './components/EditUserForm';
-import UserTable from './components/UserTable';
+import AddUserForm from '../components/AddUserForm';
+import EditUserForm from '../components/EditUserForm';
+import UserTable from '../components/UserTable';
 import { v4 as uuid4 } from 'uuid';
-import Header from './components/layout/Header';
-import usersData from './api/usuarios.json';
+import Header from '../components/layout/Header';
+import usersData from '../api/usuarios.json';
 
 
 

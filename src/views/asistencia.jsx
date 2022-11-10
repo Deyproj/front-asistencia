@@ -1,10 +1,10 @@
 import { Container, Row, Col } from "reactstrap";
-import ListaPersonas from "./components/ListaPersonas";
-import TarjetasPersonas from "./components/TarjetasPersonas";
+import ListaPersonas from "../components/ListaPersonas";
+import TarjetasPersonas from "../components/TarjetasPersonas";
 import axios from "axios";
-import Header from "./components/layout/Header";
+import Header from "../components/layout/Header";
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import personas from "./api/colaboradores.json";
+import personas from "../api/colaboradores.json";
 
 
 
