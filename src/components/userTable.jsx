@@ -3,13 +3,14 @@ import React from 'react';
 const UserTable = (props) => {
 
     return (
-        <table>
-            <thead>
+        <table className='text-center table table-striped'>
+            <thead className='text-white navBar'>
                 <tr>
-                    <th>Nombre</th>
-                    <th>UserName</th>
-                    <th>Contraseña</th>
-                    <th>Acciones</th>
+                    <th scope='col'>Nombre</th>
+                    <th scope='col'>UserName</th>
+                    <th scope='col'>Rol</th>
+                    <th scope='col'>Contraseña</th>
+                    <th scope='col'>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,14 +18,13 @@ const UserTable = (props) => {
                     props.users.length > 0 ?
                     props.users.map((user) => (
                         <tr key={user.idUsuario}>
+                            <td>{user.nombre}</td>
                             <td>{user.username}</td>
-                            <td>{user.role}</td>
+                            <td>{user.roles}</td>
                             <td>{user.password}</td>
                             <td>
-                                <button className='button muted-button'
-                                >Editar</button>
-                                <button className='button muted-button'
-                                >Eliminar</button>
+                            <a className='btn btn-warning mx-1' href="#" onClick={() => { props.editUser(user) }}>Editar</a>
+                            <button className='btn btn-danger' onClick={() => { props.deleteUser(user.id) }}>Borrar</button>
                             </td>
                         </tr>
                     )) :(
