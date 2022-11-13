@@ -1,5 +1,6 @@
 import NavBar from "./components/layout/NavBar";
-import Asistencia from "./views/asistencia";
+import Asistencia from "./asistencia";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Actual from "./views/actual";
 import Users from "./views/users";
