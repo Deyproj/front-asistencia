@@ -1,5 +1,5 @@
-import { faPersonCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import { faPersonCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 import Header from '../components/layout/Header';
 import TarjetasPersonas from '../components/TarjetasPersonas';
@@ -38,10 +38,12 @@ const Actual = () => {
     return (
         <>
             <Header titulo="Actual" />
+            <div className='col-11 mx-auto'>
             <TarjetasPersonas totalPersonas={total} titulo="Total Personas" background="bg-primary" icon={faPersonCircleMinus} />
             <TarjetasPersonas totalPersonas={presentes} titulo="Personas Presentes" background="bg-success" icon={faPersonCircleMinus} />
             <TarjetasPersonas totalPersonas={ausentes} titulo="Personas Ausentes" background="bg-danger" icon={faPersonCircleMinus} />
             <TarjetasPersonas totalPersonas={pendientes} titulo="Personas Pendientes por vallidar" background="bg-secondary" icon={faPersonCircleMinus} />
+            </div>
         </>
     );
 }

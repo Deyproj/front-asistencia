@@ -21,7 +21,7 @@ function NavBar() {
           <Nav className="me-auto"></Nav>
           <Nav>
             <Nav.Link eventKey={1}>
-            <Link to="/" className="link">
+            <Link to="/asistencia" className="link">
               <FontAwesomeIcon icon={faPersonChalkboard} /> Asistencia
             </Link>
             </Nav.Link>

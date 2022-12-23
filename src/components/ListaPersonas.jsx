@@ -29,14 +29,11 @@ const ListaPersonas = ({ personas, onUpdate }) => {
                 <Accordion.Body className="bodyCard">
                   <b>Id:</b><br />
                   {persona.idEmpresa}<br />
-                  <b>Cedula:</b><br />
-                  {persona.cedula} <br />
-                  <b>Celular:</b><br />
-                  {persona.celular}
-                  <a href={`${"https://api.whatsapp.com/send?phone=57"}${persona.celular}`}
-                    className="btn  pt-0 pb-0  rounded-circle" target="blank">
-                    <img src="/images/whatsapp.png" width="21" />
-                  </a> <br /><br />
+                  <b>Proceso:</b><br />
+                  {persona.proceso}<br />
+
+                  
+                  <br />
                   <Form>
                   <Form.Control  name="observaciones" placeholder="Observaciones" onChange={e => setObservaciones(e.target.value)} onBlur={() => onUpdate(persona, observaciones)}/>
                   </Form>
