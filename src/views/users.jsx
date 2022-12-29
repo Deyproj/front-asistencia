@@ -12,7 +12,7 @@ import usersData from '../api/usuarios.json';
 const Users = () => {
 
     const [users, setUsers] = useState(usersData);
-    const [editing, setEditing] = useState(true);
+    const [editing, setEditing] = useState(false);
     const [currenUser, setCurrenUser] = useState({
         idUsuario: null,
         nombre: "",

@@ -31,9 +31,7 @@ const Actual = () => {
         })
     };
 
-    useEffect (() => {
-        obtenerTotales(personas)
-    }, [])
+
 
     return (
         <>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 const EditUserForm = (props) => {
@@ -7,10 +7,14 @@ const EditUserForm = (props) => {
         defaultValues: props.currenUser
     });
 
-    setValue('nombre', props.currenUser.nombre)
-    setValue('username', props.currenUser.username)
-    setValue('password', props.currenUser.password)
-    setValue('roles', props.currenUser.roles)
+
+    useEffect (() => {
+        setValue('nombre', props.currenUser.nombre)
+        setValue('username', props.currenUser.username)
+        setValue('password', props.currenUser.password)
+        setValue('roles', props.currenUser.roles)
+    }, )
+    
 
     const onSubmit = (data, e) => {
         data.id = props.currenUser.id
