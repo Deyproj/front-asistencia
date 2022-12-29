@@ -12,7 +12,7 @@ import usersData from '../api/usuarios.json';
 const Users = () => {
 
     const [users, setUsers] = useState(usersData);
-    const [editing, setEditing] = useState(false);
+    const [editing, setEditing] = useState(true);
     const [currenUser, setCurrenUser] = useState({
         idUsuario: null,
         nombre: "",
@@ -34,7 +34,7 @@ const Users = () => {
         //editamos en Api
     }
 
-    const deleteProducts = (id) => {
+    const deleteUser = (id) => {
         //eliminamos en Api
     }
 
@@ -72,7 +72,7 @@ const Users = () => {
                     <br />
                     <div className="flex-large">
                         <h2>Usuarios Actuales</h2>
-                        <UserTable users={users} deleteProducts={deleteProducts} editUser={editUser}/>
+                        <UserTable users={users} deleteProducts={deleteUser} editUser={editUser}/>
                     </div>
                 </div>
             </div>

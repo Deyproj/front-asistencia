@@ -1,5 +1,9 @@
 body{
    overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   height:100vh;
+   
 }
 
 .navBar{
@@ -28,6 +32,12 @@ body{
     height: 70px;
 }
   
+.login{
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+
 
 
 

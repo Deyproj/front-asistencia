@@ -23,8 +23,8 @@ const UserTable = (props) => {
                             <td>{user.roles}</td>
                             <td>{user.password}</td>
                             <td>
-                            <button className='btn btn-warning mx-1' href="#" onClick={() => { props.editUser(user) }}>Editar</button>
-                            <button className='btn btn-danger' onClick={() => { props.deleteUser(user.id) }}>Borrar</button>
+                            <button className='btn btn-warning mx-1' onClick={() => {props.editUser(user)}}>Editar</button>
+                            <button className='btn btn-danger' onClick={() => {props.deleteUser(user.id)}}>Borrar</button>
                             </td>
                         </tr>
                     )) :(
