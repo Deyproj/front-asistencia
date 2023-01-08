@@ -1,15 +1,33 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+const URL_LOGIN = "";
+
+
+const enviarLogin = async (url, data)=>{
+
+  const resp = await fetch (url, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type' :  'application/json'
+    }
+  });
+
+  console.log(resp);
+  const json = await resp.json();
+  console.log(json);
+}
+
 
 const Login = () => {
   const { register,formState: { errors }, handleSubmit } = useForm();
 
   const onSubmit = (data, e) => {
-      console.log(data)
+      console.log(data);
+      enviarLogin(URL_LOGIN, data);
       e.target.reset();
+      
   }
-
-
     return ( 
         <>
 
@@ -26,33 +44,24 @@ const Login = () => {
               <h1>Login</h1>
               <p className="text-muted">Sign In to your account</p>
               <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="input-group mb-3">
-                <span className="input-group-addon"><i className="fa fa-user"></i></span>
-                <input type="text" className="form-control"  placeholder="Username" name="username" {...register("username", {
+                        <label className="form-label">Username</label>
+                        <input className="form-control" type="text" name="username" {...register("username", {
                             required: "Campo Obligatorio",
-                        })}
-                />
-                 <div className='text-danger'>
+                        })} />
+                        <div className='text-danger'>
                             {errors?.username?.message}
-                </div>
-              </div>
-              <div className="input-group mb-4">
-                <span className="input-group-addon"><i className="fa fa-lock"></i></span>
-                <input type="password" className="form-control" placeholder="Password" name="password" {...register("password", {
+                        </div>
+                        <label className="form-label">Password</label>
+                        <input className="form-control" type="text" name="password" {...register("password", {
                             required: "Campo Obligatorio",
                         })}
-                />
-                <div className='text-danger'>
+                        />
+                        <div className='text-danger'>
                             {errors?.password?.message}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-6">
-                  <button type="button" className="btn btn-primary px-4">Login</button>
-                </div>
-           
-              </div>
-              </form>
+                        </div>
+                        <br />
+                        <button className='btn btn-primary'>Login</button>
+                    </form>
             </div>
           </div>
           <div className="card text-white bg-primary py-5 d-md-down-none" >

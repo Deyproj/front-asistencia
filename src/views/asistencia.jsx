@@ -1,49 +1,63 @@
+import { React, useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import ListaPersonas from "../components/ListaPersonas";
 import TarjetasPersonas from "../components/TarjetasPersonas";
-import axios from "axios";
 import Header from "../components/layout/Header";
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import personas from "../api/colaboradores.json";
+//import personas from "../api/colaboradores.json";
 
 
 
 const Asistencia = () => {
     
-      //const [personas, setPersonas,] = useState([]);
+      const [personas, setPersonas] = useState([]);
+      
       let totalPersonas = personas.length;
+
+
     
-      /*
-      useEffect(cargarPersonas, []);
-      const cargarPersonas = () => {
-        axios.get('http://localhost:9090/personas')
-          .then(({data}) => setPersonas(data))
-      }
       let procesos = new Set([]);
-      {personas.map((persona) => (
+      personas.map((persona) => (
         procesos.add(persona.proceso)
-        ))}
-    */
-      const actulizarObservaciones = (persona, observaciones) => {
-        if (persona) {
-          persona.observaciones = observaciones.undefined;
-          axios
-            .post(`http://localhost:9090/personas`, persona)
+        ))
+      
+      const cargarPersonas = () => {
+        fetch(`http://localhost:9090/personas`, {
+          method: 'GET',
+        })
+           .then(res => res.json())
+           .then(res => {setPersonas(res)})
+      }
+
+        
+        const actulizarObservaciones = async(persona, observaciones) => {
+          if (persona) {
+            persona.observaciones = observaciones.undefined;
+            await fetch(`http://localhost:9090/personas`, {
+              method: 'POST',
+              body: persona,
+            })
             .then(console.log("Observacion enviada"));
-        } else {
-          console.log("La observacion no se pudo enviar");
-        }
-      };
-    /*
+          } else {
+            console.log("La observacion no se pudo enviar");
+          }
+        };
+
+
+        /*
       const addUser = async (user) => {
        const data = await fetch(`http://localhost:9090/personas`, user)
         const users = await data.json()
-        console.log(users)
       };
    */
+
+      useEffect(() => {
+        cargarPersonas()
+      }, []);
+
       return (
         <>
-            <Header titulo="Asistencia" />
+         <Header titulo="Asistencia" />
             <Container>
               <Row>
                 <Col md={8}>

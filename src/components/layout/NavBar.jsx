@@ -20,27 +20,21 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav>
-            <Nav.Link eventKey={1}>
-            <Link to="/asistencia" className="link">
+            <Link to="/asistencia" className="link m-2">
               <FontAwesomeIcon icon={faPersonChalkboard} /> Asistencia
             </Link>
-            </Nav.Link>
-            <Nav.Link eventKey={2}>
-              <Link to="/actual" className="link">
+              <Link to="/actual" className="link m-2">
                 <FontAwesomeIcon icon={faMagnifyingGlassChart} /> Actual
               </Link>
-            </Nav.Link>
-            <Nav.Link eventKey={3}>
-              <Link to="/users" className="link">
+              <Link to="users" className="link m-2">
                 <FontAwesomeIcon icon={faUserPen} /> Usuarios
               </Link>
-            </Nav.Link>
-            <Nav.Link eventKey={4} href="#deets">
+              <Link to="/" className="link m-2">
               <FontAwesomeIcon icon={faRefresh} /> Actualizar
-            </Nav.Link>
-            <Nav.Link eventKey={5} href="#deets">
+              </Link>
+              <Link to="/" className="link m-2">
               <FontAwesomeIcon icon={faUserTimes} /> Salir
-            </Nav.Link>
+              </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

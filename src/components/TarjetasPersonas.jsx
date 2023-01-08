@@ -9,8 +9,6 @@ const TarjetasPersonas = ({ totalPersonas, titulo, background, icon}) => {
         <div className="card-body ">
           <h4>{titulo}</h4>
           <h4>
-          <FontAwesomeIcon icon="fa-thin fa-person-from-portal" />
-
             <FontAwesomeIcon icon={icon}/>{" "} {totalPersonas}
           </h4>
         </div>

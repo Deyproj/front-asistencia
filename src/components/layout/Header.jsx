@@ -8,9 +8,9 @@ const Header = ({ titulo }) => {
                     <div className="row">
                         <div className="col-12 col-lg-12">
                             <h1 className="restitle mt-1">
-                                <text>
+                                <p>
                                     <img src='/images/cubo-3d.png' width="45" height="45" ></img>
-                                    {" "}{titulo}</text>
+                                    {" "}{titulo}</p>
                             </h1>
                         </div>
                     </div>
